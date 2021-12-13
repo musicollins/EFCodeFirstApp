@@ -1,0 +1,13 @@
+﻿@page
+@model EFCodeFirstApp.UI.Pages.EditModel
+@{
+}
+
+<h1>Edit Movie</h1>
+<form asp-page-handler="Update">
+    <input type="hidden" asp-for="@Model.Book.Id" value="@Model.Book.Id" />
+    <input type="text" asp-for="@Model.Book.Name" value="@Model.Book.Name" />
+    <input type="text" asp-for="@Model.Book.Author" value="@Model.Book.Author"/>
+    <input type="text" asp-for="@Model.Book.Code" value="@Model.Book.Code"/>
+    <button type="submit">Update</button>
+</form>
