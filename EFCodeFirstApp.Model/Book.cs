@@ -6,5 +6,14 @@
         public string Name { get; set; }
         public string Author { get; set; }
         public int Code { get; set; }
+
+        public void CloneIt(Book book)
+        {
+            Name = book.Name;
+            Author = book.Author;
+            Code = book.Code;
+        }
     }
+
+
 }

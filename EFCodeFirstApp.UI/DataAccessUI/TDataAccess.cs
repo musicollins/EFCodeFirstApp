@@ -26,8 +26,13 @@ namespace EFCodeFirstApp.UI.DataAccessUI
 
         public void SaveAsync(Book book)
         {
-            _tDbContext.Books.Update(book);
-            _tDbContext.Entry(book).State = EntityState.Modified;
+            //Retrieve the object first, then update it!
+            var b = _tDbContext.Books.SingleOrDefault(b => b.Id == book.Id);
+            //CloneIt Method exists in the book model for the purposes of updating object
+            //before it is saved into the database
+            b.CloneIt(book);
+            
+            //_tDbContext.Entry(book).State = EntityState.Modified;
             _tDbContext.SaveChanges();
         }
     }
