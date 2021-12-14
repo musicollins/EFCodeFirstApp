@@ -4,6 +4,10 @@
 }
 
 <h1>Edit Movie</h1>
+@if (!string.IsNullOrEmpty(Model.Feedback)) { 
+    <h1>@Model.Feedback</h1>
+
+}
 <form asp-page-handler="Update">
     <input type="hidden" asp-for="@Model.Book.Id" value="@Model.Book.Id" />
     <input type="text" asp-for="@Model.Book.Name" value="@Model.Book.Name" />

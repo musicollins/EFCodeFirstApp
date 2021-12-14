@@ -20,6 +20,7 @@ namespace EFCodeFirstApp.UI.Pages
 
         [BindProperty]
         public Book Book { get; set; }
+        [BindProperty]
         public string Feedback { get; set; }
 
         public void OnGet(int id)
@@ -32,6 +33,7 @@ namespace EFCodeFirstApp.UI.Pages
             if (ModelState.IsValid)
             {
                 _dataAccess.SaveAsync(Book);
+                Feedback = "Book Updated";
                 return Page();    
                 
             }
